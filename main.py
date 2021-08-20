@@ -189,5 +189,42 @@ while(True):
 # cv2.waitKey(50000)
 # cv2.destroyAllWindows()
 
+# 人脸识别算法 
+
+# cap_1 = cv.VideoCapture(0, cv2.IMREAD_GRAYSCALE)
+# kenel = np.ones((2, 2), np.uint8)
+# width = int(cap_1.get(3))
+# height = int(cap_1.get(4))
+# out = cv.VideoWriter('E://opencv_picture//out_new.avi', cv.VideoWriter_fourcc("M", "J", "P", "G"), 25, (width, height))
+# while(cap_1.isOpened()):
+#     ret, frame = cap_1.read()
+#     if ret == True:
+#         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+#         # cvopen = cv.morphologyEx(frame, cv.MORPH_OPEN, kenel) COLOR_BGR2GRAY
+#         # mhs = cv.bilateralFilter(cvopen, 2, 100, 2)
+#         # gaos = cv.GaussianBlur(mhs, (1, 1), 1)
+#         # jzlb = cv.blur(gaos, (5, 5))
+#         # # #轮廓描边
+#         # v2 = cv2.Canny(gray, 30, 100)
+#         face_cas = cv.CascadeClassifier('E:/opencv_picture/haarcascade_frontalface_default.xml')
+#         face_cas.load('E:/opencv_picture/haarcascade_frontalface_default.xml')
+#         eyes_cas = cv.CascadeClassifier('E:/opencv_picture/haarcascade_eye.xml')
+#         eyes_cas.load('E:/opencv_picture/haarcascade_eye.xml')
+#         faceRects = face_cas.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(32, 32))
+#         for faceRect in faceRects:
+#             x, y, w, h = faceRect
+#             cv.rectangle(gray, (x, y), (x + h, y + w), (0, 255, 0), 3)
+#             roi_color = gray[y:y+h, x:x+w]
+#             # roi_gray = gray[y:y+h, x:x+w]
+#             eyes = eyes_cas.detectMultiScale(roi_color)
+#             for(ex, ey, ew, eh) in eyes:
+#                 cv.rectangle(roi_color, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+#         cv2.imshow('My', gray)
+#         out.write(gray)
+#         if cv.waitKey(25) & 0xFF == ord('q'):
+#             break
+#             cap.release()
+#             out.release()
+#             cv2.destroyAllWindows()
 
 
